@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  bot:
+    build: .
+    container_name: calendar_bot
+    environment:
+      - TELEGRAM_API_TOKEN=${TOKEN_ID}
+    volumes:
+      - .:/app
+    restart: always
+    command: python bot.py
